@@ -4,14 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PlacementPrep</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<link rel="stylesheet" href="style.css"></head>
 <body>
-<div id="login"><div class="login"><div style="font-size:38px">🎓</div><div class="eyebrow">PLACEMENT PREPARATION</div><h1>Welcome Back</h1><p>Learn concepts → practice → timed mock → detailed result.</p><form onsubmit="return login(event)"><div class="field"><label>Email</label><input type="email" required placeholder="student@example.com"></div><div class="field"><label>Password</label><input type="password" minlength="4" required placeholder="••••••••"></div><button class="primary" style="width:100%">LOGIN & START</button></form><p style="text-align:center;font-size:12px;margin-top:14px">No account? <a href="register.html">Create one here</a></p></div></div>
-<div id="app">
-<header class="top"><div class="brand">Placement<span>Prep</span></div><div><button onclick="document.body.classList.toggle('dark')">🌙</button><button onclick="location.reload()">Logout</button></div></header>
-<section class="hero"><div><div class="eyebrow">PERSONAL PLACEMENT HUB</div><h1>Learn. Practice. <span>Get Ready.</span></h1><p>Detailed Aptitude, Technical and HR concepts with examples, practice questions, topic quizzes, timed mocks, score categories and weak-topic analysis.</p><button class="primary" onclick="openCourse('Aptitude')">START LEARNING →</button></div><div class="readiness"><b>PLACEMENT READINESS</b><div class="ring"><b>72%</b></div><small>Keep practicing</small></div></section>
-<section class="section"><h2>Progress</h2><div class="stats"><div class="stat"><b>🔥 7</b><span>Day Streak</span></div><div class="stat"><b>320 XP</b><span>XP</span></div><div class="stat"><b>Lv. 4</b><span>Level</span></div><div class="stat"><b id="done">0</b><span>Questions Done</span></div></div></section>
+<div id="login"><div class="login"><div style="font-size:38px">🎓</div><div class="eyebrow">PLACEMENT PREPARATION</div><h1>Welcome Back</h1><p>Learn concepts → practice → timed mock → detailed result.</p><form onsubmit="return login(event)"><div class="field"><label>Email</label><input type="email" required placeholder="student@example.com"></div><div class="field"><label>Password</label><input type="password" minlength="4" required placeholder="••••••••"></div><button class="primary" style="width:100%">LOGIN & START</button><p id="loginMsg" style="text-align:center;font-size:13px;color:#666;"></p></form><p style="text-align:center;font-size:12px;margin-top:14px">No account? <a href="register.html">Create one here</a></p></div></div><div id="app">
+<header class="top"><div class="brand">Placement<span>Prep</span></div><div><button onclick="document.body.classList.toggle('dark')">🌙</button><button onclick="logout()">Logout</button></div></header>
+<section class="hero"><div><div class="eyebrow">PERSONAL PLACEMENT HUB</div><h1>Learn. Practice. <span>Get Ready.</span></h1><p>Detailed Aptitude, Technical and HR concepts with examples, practice questions, topic quizzes, timed mocks, score categories and weak-topic analysis.</p><button class="primary" onclick="openCourse('Aptitude')">START LEARNING →</button></div><div class="readiness"><b>PLACEMENT READINESS</b><div class="ring" id="readinessRing"><b id="readinessPct">0%</b></div><small>Keep practicing</small></div></section>
+<section class="section"><h2>Progress</h2><div class="stats"><div class="stat"><b id="streakStat">🔥 0</b><span>Day Streak</span></div><div class="stat"><b id="xpStat">0 XP</b><span>XP</span></div><div class="stat"><b id="levelStat">Lv. 1</b><span>Level</span></div><div class="stat"><b id="done">0</b><span>Questions Done</span></div></div></section>
 <section class="section"><h2>Learning Paths</h2><div class="grid">
 <div class="card"><div class="icon">🧮</div><h3>Aptitude</h3><p>25+ concepts: formulas, examples, shortcuts, practice and quizzes.</p><button class="primary" onclick="openCourse('Aptitude')">Explore →</button></div>
 <div class="card"><div class="icon">💻</div><h3>Technical</h3><p>C, C++, Java, Python, OOP, DSA, DBMS, SQL, OS, Networks.</p><button class="primary" onclick="openCourse('Technical')">Explore →</button></div>
@@ -33,6 +31,5 @@
 <div id="mock" class="overlay hidden"><div class="modal" style="display:block"><main class="main"><button class="close" onclick="closeBox('mock')">×</button><span class="timer" id="timer">00:00</span><div class="eyebrow">TIMED MOCK</div><h2 id="mockTitle"></h2><div class="progress"><i id="mp"></i></div><div id="mockArea"></div></main></div></div>
 <div id="special" class="overlay hidden"><div class="modal" style="display:block"><main class="main"><button class="close" onclick="closeBox('special')">×</button><div id="specialBody"></div></main></div></div>
 
-<script src="script.js"></script>
-</body>
+<script src="script.js"></script></body>
 </html>
